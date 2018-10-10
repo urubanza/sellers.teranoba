@@ -1,0 +1,39 @@
+<form method="POST" enctype="multipart/form-data" id="addProjectsCategorie">
+  <div class="form-group">
+    <label for="email"> name:</label>
+    <input type="text" class="form-control" name="catname" id="" required>
+  </div>
+  <div class="form-group">
+    <label for="email"> description: </label>
+    <textarea name="description" class="form-control">
+
+    </textarea>
+  </div>
+  <div class="form-group">
+    <label for="icon"> icon:(50x50) </label>
+    <input type="file" class="form-control" name="catImage" id="" required>
+  </div>
+  <button type="submit" class="btn btn-info"> add a category </button>
+</form>
+<div id="funcss">
+
+</div>
+<script>
+  $("#addProjectsCategorie").submit( function(evet){
+      evet.preventDefault();
+      var formData = new FormData($("#addProjectsCategorie")[0]);
+      $("#funcss").html(loading_small);
+      $.ajax({
+                url: "addcategory.php",
+                type: 'POST',
+                data: formData,
+                async: false,
+                success: function (dass) {
+                            $("#funcss").html(dass);
+                        },
+                        cache: false,
+                        contentType: false,
+                        processData: false
+                    });
+  })
+</script>
