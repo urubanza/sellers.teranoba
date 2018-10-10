@@ -7,7 +7,7 @@ if(isset($_POST['values'])){
      while($row=mysqli_fetch_array($result,MYSQLI_BOTH))
      {
         ?>
-    <option value="<?php echo $row["id"] ?>"><?php echo $row["name"] ?></option>
+    <option value="<?php echo $row["cat_id"] ?>"><?php echo $row["name"] ?></option>
     <?php
      }
 }

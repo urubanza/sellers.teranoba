@@ -84,6 +84,7 @@ include("../functions/fileUpload.php");
                                         '$shop',
                                         '$subCategorie')";
             $res = mysqli_query($conn,$sql);
+            echo $sql;
            if(!$res)
                echo mysqli_error($conn);
            else {
